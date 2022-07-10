@@ -1,0 +1,85 @@
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+button {
+    width: 35%;
+    height: 8%;
+    border: none;
+    font-size: 17px;
+    margin: 3% 0;
+    background-color:#ddd;
+    border-radius: 2px;
+}
+
+#pig-container {
+    width: 80%;
+    height: 72%;
+    margin: 8% auto;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ddd;
+}
+
+.player-wrapper {
+    width: 50%;
+    height: 80%;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.player-wrapper .player-score {
+    height: 30%;
+    padding: 4%;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.player-wrapper .bank-box {
+    width: 30%;
+    height: 20%;
+    background-color:rgb(255, 175, 63);
+    margin:0 auto;
+    padding: 5%;
+    font-size: 20px;
+    border-radius: 2px;
+}
+
+.player-wrapper .player-turn {
+    margin: auto;
+    width: 10%;
+    height: 1%;
+    background-color: red;
+}
+
+.game-info {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin: 25%;
+}
+
+.game-info .newgame {
+    background-color:rgb(158, 255, 2);
+}
+.game-info  .dice {
+    width: 30%;
+    padding: 5%;
+}
+
+.target-container {
+    height: 8%;
+    font-size: 22px;
+}
