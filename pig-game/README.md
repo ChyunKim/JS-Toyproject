@@ -1,4 +1,4 @@
-#Pig Dice Game
+# Pig Dice Game
 player 2명이서 target score 를 먼저 채운 사람이 우승하는 게임
 
 ## 제작페이지 보기
