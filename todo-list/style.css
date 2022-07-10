@@ -1,0 +1,134 @@
+body {
+  font-family: 'Noto SansKR', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+  line-height: 1.4;
+  min-height: 100vh;
+  background-image: linear-gradient(to top, #faecf8 30%, #f5f5f5 70%);
+}
+
+
+div {
+  position: relative;
+}
+
+/*container*/
+.container {
+  width: 470px;
+  height: 550px;
+  background-color: #ffffff;
+  position: absolute;
+  top:0;
+  bottom:0;
+  left: 0;
+  right: 0;
+  margin:100px auto;
+  box-shadow: 20px 20px 20px #a4a4a464;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+  padding: 20px;
+  overflow: auto;
+}
+
+h1 {
+  height: 50px;
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: 26px;
+  text-align: center;
+  padding: 16px;
+  margin: auto;
+
+}
+
+.add-element {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  color: #333333;
+  width: 75%;
+  height: 45px;
+  outline:none;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  border: 1px solid #dddddd;
+}
+
+button {
+  float: right;
+  width: 60px;
+  height: 45px;
+  font-family: 'Noto SansKR', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color:#585858;
+  background-color: #f7f7f7;
+  border: none;
+  border-radius: 10px;
+}
+
+button:hover {
+  text-decoration: underline;
+}
+
+#btn {
+  width: 20%;
+  height: 50px;
+  margin:auto;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  border: 1px solid #dddddd;
+  color:#585858;
+}
+
+#btn:hover {
+  text-decoration: none;
+  background-color: #faecf8;
+}
+
+input::placeholder {
+  color: #d8d8d8;
+  padding-left:10px;
+}
+
+
+
+/*
+.list-element {
+  width: 455px;
+  height: 50px;
+  line-height: 45px;
+  position: absolute;
+  border: 1px solid #dddddd;
+  background-color: #faecf8;
+  border-radius: 5px;
+  margin-top:25px;
+}
+*/
+
+
+.list-element {
+  margin-top: 20px;
+  position: absolute;
+}
+
+
+ul {
+  list-style: none;
+}
+
+
+li {
+  width: 445px;
+  border: 340px;
+  height: 45px;
+  line-height: 45px;
+  margin-top:5px;
+  border: 1px solid #dddddd;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  color: #737373;
+  padding-left: 15px;
+}
