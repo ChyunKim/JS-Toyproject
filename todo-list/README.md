@@ -31,7 +31,7 @@ Dom API를 활용하여 만든 간단한 toy-project
 - 입력받은 할일을 ul 자식요소로 추가되도록 기본틀 구성
 
 
-**2. Element 객체 변수 저장 **
+**2. Element 객체 변수 저장**
 
 ```javascript
 var input = document.getElementById('task-input')';
@@ -41,7 +41,7 @@ var ul = document.getElementById('list');
 ```
 - id 속성을 가진 요소를 찾고, 이를 나타내는 Element 객체를 각각 변수에 저장
 
-**3. 할일 리스트 추가 **
+**3. 할일 리스트 추가**
 
 ```javascript
 btn.addEventListener('click', function(e){
@@ -77,7 +77,7 @@ cnt를 인자로 넘겨주는 이유는 완료, 삭제 처리시 서열이 지�
 - appenChild를 이용하여 ul 자식요소노드로 li 추가
 
 
-**4. 할일리스트 삭제처리 **
+**4. 할일리스트 삭제처리**
 
 ```javascript
 function removeTodo(cnt){
@@ -89,7 +89,7 @@ function removeTodo(cnt){
 - 삭제버튼 클릭시 해당 함수 호출
 - removeChild 사용으로 ul 자식요소인 li를 cnt 해당되는 서열 삭제
 
-**5. 할일리스트 완료처리 **
+**5. 할일리스트 완료처리**
 
 ```javascript
 function completeTodo(cnt){
