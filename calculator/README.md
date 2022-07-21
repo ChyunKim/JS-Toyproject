@@ -1,7 +1,8 @@
 # 계산기
 단순한 사칙연산 계산기 기능 구현하기
 
-![image](https://user-images.githubusercontent.com/53160685/179360186-89dc2b23-181e-4631-b1ab-056fc7247df7.png)
+![image](https://user-images.githubusercontent.com/53160685/180139526-fc7507eb-0b1f-45ec-bdc9-f8f9748f19f5.gif)
+
 
 ## HTML 기본틀
 ```HTML
@@ -13,11 +14,11 @@
         </div>
         <div id="btn-container">
             <div class="num-wrapper">
-                <button class="num">C</button>
-                <button class="num">+/-</button>
-                <button class="num">%</button>
+              <button class="preoper">C</button>
+                <button class="preoper">+/-</button>
+                <button class="preoper">%</button>
+                <button class="preoper">.</button>
                 <button class="num">0</button>
-                <button class="num">.</button>
                 <button class="num">1</button>
                 <button class="num">2</button>
                 <button class="num">3</button>
@@ -46,17 +47,21 @@
 
 ```css
 .num-wrapper {
-    display: grid;
+    display:grid;
     grid-template-rows: repeat(5, 90px);
     grid-template-columns: repeat(3, 90px);
-}
+    border-radius: 6px;
 
-.num:nth-child(4){
-    grid-area: 5/1/5/3;
+}
+.preoper{
+    font-size: 18px;
+}
+.preoper:nth-child(4){
+    grid-area: 5/3;
 }
 
 .num:nth-child(5){
-    grid-area: 5/3
+    grid-area: 5/2/5/3;
 }
 
 .oper-wrapper {
@@ -64,9 +69,16 @@
     grid-template-rows: repeat(4, 90px);
     grid-template-columns: repeat(1, 90px);
 }
+.oper {
+    font-size: 26px;
+}
+.oper:nth-child(1) {
+    font-size: 22px;
+}
+.oper:nth-child(5) {
+    color: #FFB800;
+}
 ```
 
 - 각각의 버튼을 grid를 활용하여 배치되도록 스타일적용
-- 0은 grid area를 다른 버튼 보다 넓게 적용
-
-
+- ```0```, ```.``` 버튼은 마지막 행에 배치되도록 설정
