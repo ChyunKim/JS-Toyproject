@@ -56,23 +56,21 @@ button {
 }
 
 .num-wrapper {
-    display: grid;
+    display:grid;
     grid-template-rows: repeat(5, 90px);
     grid-template-columns: repeat(3, 90px);
-}
-.num {
     border-radius: 6px;
-}
 
-.num:nth-child(-n+3){
+}
+.preoper{
     font-size: 18px;
 }
-.num:nth-child(4){
-    grid-area: 5/1/5/3;
+.preoper:nth-child(4){
+    grid-area: 5/3;
 }
 
 .num:nth-child(5){
-    grid-area: 5/3
+    grid-area: 5/2/5/3;
 }
 
 .oper-wrapper {
@@ -89,4 +87,6 @@ button {
 .oper:nth-child(5) {
     color: #FFB800;
 }
+
+
 
