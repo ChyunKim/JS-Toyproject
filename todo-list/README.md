@@ -44,7 +44,7 @@ var ul = document.getElementById('list');
 **3. 할일 리스트 추가**
 
 ```javascript
-btn.addEventListener('click', function(e){
+btn.addEventListener('click', (e)=>{
   if(input.value.length==0){
     alert("할일을 입력하세요!")
   }
