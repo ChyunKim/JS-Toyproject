@@ -3,7 +3,7 @@ var input = document.getElementById('task-input');
 var btn = document.getElementById('btn');
 var ul = document.getElementById('list');
 
-btn.addEventListener('click', function(e){
+btn.addEventListener('click', (e)=>{
   if(input.value.length==0){
     alert("할일을 입력하세요!")
   }
@@ -22,7 +22,7 @@ btn.addEventListener('click', function(e){
 })
 
 
-input.addEventListener('keypress', function(e){
+input.addEventListener('keypress', (e)=> {
   if(e.key =='Enter'){
     if(input.value.length==0){
       alert("할일을 입력하세요!")
