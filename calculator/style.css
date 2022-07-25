@@ -79,11 +79,9 @@ button {
     grid-template-columns: repeat(1, 90px);
 }
 .oper {
-    font-size: 26px;
+    font-size: 21px;
 }
-.oper:nth-child(1) {
-    font-size: 22px;
-}
+
 .oper:nth-child(5) {
     color: #FFB800;
 }
