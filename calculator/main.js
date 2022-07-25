@@ -1,17 +1,17 @@
 class Calculator {
     constructor() {
         this.num = '';
-        this.result = [];
+        this.result = '';
         this.count = 0;
     }
     init() {
         this.num = 0;
         display.innerHTML = '';
+        process.innerHTML = '';
     }
     appendNum(number) {
         this.num += number;
         this.num = Number(this.num);
-        this.display();
     }
     display() {
         display.innerHTML = this.num;
@@ -41,13 +41,25 @@ class Calculator {
         }
     }
     operator(input){ 
-        this.count++;
-      
+
+        if(input === '=') {
+            process.innerHTML += this.num;
+            display.innerHTML = eval(process.innerHTML);
+            process.innerHTML = '';
+        } else if (input === 'x') {
+            process.innerHTML += this.num + '*';
+            this.num = 0;
+        } else{
+            process.innerHTML += this.num + input;
+            this.num = 0;
+        }
     }
+
     
 }
 
 let display = document.querySelector('.result-display');  
+let process = document.querySelector('.process-display');
 let numbtn = document.querySelectorAll('.num');
 let operbtn = document.querySelectorAll('.oper');
 let preoperbtn = document.querySelectorAll('.preoper');
@@ -58,10 +70,12 @@ let oper ='';
 const calculator = new Calculator();
 
 calculator.init();
+
 numbtn.forEach((arr) =>{
     arr.addEventListener('click',()=>{
         number = arr.innerHTML;
         calculator.appendNum(number);
+        calculator.display();
     })
 })
 
