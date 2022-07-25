@@ -1,7 +1,7 @@
 # 계산기
 단순한 사칙연산 계산기 기능 구현하기
 
-![image](https://user-images.githubusercontent.com/53160685/180139526-fc7507eb-0b1f-45ec-bdc9-f8f9748f19f5.gif)
+![calculator](https://user-images.githubusercontent.com/53160685/180818786-67d151d3-06ba-43ec-a26d-71fff715216b.gif)
 
 
 ## HTML 기본틀
@@ -82,3 +82,149 @@
 
 - 각각의 버튼을 grid를 활용하여 배치되도록 스타일적용
 - ```0```, ```.``` 버튼은 마지막 행에 배치되도록 설정
+
+
+## javascript
+
+```javascript
+let display = document.querySelector('.result-display');  
+let process = document.querySelector('.process-display');
+let numbtn = document.querySelectorAll('.num');
+let operbtn = document.querySelectorAll('.oper');
+let preoperbtn = document.querySelectorAll('.preoper');
+```
+- 각각의 dom 요소를 변수에 할당
+
+```javascript
+numbtn.forEach((arr) =>{
+    arr.addEventListener('click',()=>{
+       ...
+    })
+})
+
+preoperbtn.forEach((arr) =>{
+    arr.addEventListener('click',()=>{
+        ...
+    })
+})
+
+operbtn.forEach((arr) => {
+    arr.addEventListener('click',()=>{
+      ...
+    })
+})
+
+```
+
+- 각각의 버튼이 클릭될때 마다 이벤트 발생하도록 설정
+
+```javascript
+class Calculator {
+    
+    // 인스턴스 초기화
+    constructor() {
+        this.num = '';
+        this.result = '';
+        this.count = 0;
+    }
+    
+    // 계산기 연산후 초기화 메소드
+    init() {
+        this.num = 0;
+        display.innerHTML = '';
+        process.innerHTML = '';
+    }
+
+    // 버튼이 클릭될 때 숫자를 저장하는 메소드
+    appendNum(number) {
+        this.num += number;
+        this.num = Number(this.num);
+    }
+
+    // 입력된 숫자가 출력되도록 하는 메소드
+    display() {
+        display.innerHTML = this.num;
+    }
+
+    // C, +/-, %, . 과 같은 연산자가 클릭될때 계산하는 메소드
+    preoper(input) {
+        let str = '';
+        let digit = 0;
+        switch(input) {
+            case 'C':
+                this.init();
+                break;
+            case '+/-':
+                this.num *= -1;
+                this.display();
+                break;
+            case '%':
+                str = String(this.num).substring(2);
+                digit = str.length;
+                this.num *= 0.01;
+                this.num = this.num.toFixed(digit+2);
+                this.display();
+                break;
+            case '.':
+                digit = String(this.num).indexOf('.');
+                if(digit < 0) {this.num = this.num + input; this.display();}
+                break;
+        }
+    }
+    
+    // +,x, -, / 와 같은 연산시 메소드
+    operator(input){ 
+
+        if(input === '=') {
+            process.innerHTML += this.num;
+            display.innerHTML = eval(process.innerHTML);
+            process.innerHTML = '';
+        } else if (input === 'x') {
+            process.innerHTML += this.num + '*';
+            this.num = 0;
+        } else{
+            process.innerHTML += this.num + input;
+            this.num = 0;
+        }
+    }    
+}
+```
+
+- Calculator 클래스
+- 클래스는 호이스팅이 되지 않으므로 전역 변수 선언 전 구현
+- 각각의 메소드를 구현하여 버튼이 클릭될때 메소드 호출
+
+
+```javascript
+
+// new 연산자로 클래스(객체) 생성
+const calculator = new Calculator();
+
+// 계산기 초기화 메소드 호출
+calculator.init();
+
+// 각각의 버튼이 클릭될 때 그에 맞는 메소드 호출
+numbtn.forEach((arr) =>{
+    arr.addEventListener('click',()=>{
+        number = arr.innerHTML;
+        calculator.appendNum(number);
+        calculator.display();
+    })
+})
+
+preoperbtn.forEach((arr) =>{
+    arr.addEventListener('click',()=>{
+        pre = arr.innerHTML;
+        calculator.preoper(pre);
+    })
+})
+
+operbtn.forEach((arr) => {
+    arr.addEventListener('click',()=>{
+        oper = arr.innerHTML;
+        calculator.operator(oper);
+    })
+})
+
+```
+
