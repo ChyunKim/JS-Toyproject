@@ -2,6 +2,8 @@
 할일을 작성하고 관리하는 todo-list
 Dom API를 활용하여 만든 간단한 toy-project
 
+[보러가기](https://comfy-faloodeh-e6aa65.netlify.app/)
+
 ![imng](./to-img.gif)
 
  ## 프로세스
